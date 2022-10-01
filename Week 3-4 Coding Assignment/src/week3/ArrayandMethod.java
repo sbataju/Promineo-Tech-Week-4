@@ -4,7 +4,7 @@ public class ArrayandMethod {
 
 	public static void main(String[] args) {
 		// Prompt number 1
-		int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};
+		int[] ages = {3, 9, 23, 64, 2, 8, 28, 93, 26};
 		//New age:
 		//ages[8] = 26;
 		
@@ -64,40 +64,38 @@ public class ArrayandMethod {
 		}
 		System.out.println("Sum of all elements: " + sumOfNameLengths);
 		
+		
 		//Test Methods:
-		System.out.println("\nTest:");
+		System.out.println("\nTesting Methods:");
+		//Prompt 7
+		System.out.println("Prompt 7: " + repeatWordNTimes("hi", 4));
 		
-		System.out.println(repeatWordNTimes("hi", 4));
+		//Prompt 8
+		System.out.println("Prompt 8: " + makeFullName("John", "Doe"));
 		
-		System.out.println(makeFullName("John", "Doe"));
+		//Prompt 9
+		System.out.println("Prompt 9: " + isGreaterThan100(ages));
+		System.out.println("Prompt 9: " + isGreaterThan100(nameLengths));
 		
-		System.out.println(isGreaterThan100(ages));
-		System.out.println(isGreaterThan100(nameLengths));
-		
-		double[] dages = new double[9];
-		dages[0] = 3;
-		dages[1] = 9;
-		dages[2] = 23;
-		dages[3] = 64;
-		dages[4] = 2;
-		dages[5] = 8;
-		dages[6] = 28;
-		dages[7] = 93;
-		dages[8] = 26;
+		//Prompt 10
+		double[] ages1 = {3, 9, 23, 64, 2, 8, 28, 93};
 		//System.out.printf("%.2f", findAverage(dages));
-		System.out.println(findAverage(dages));
+		System.out.println("Prompt 10: " + findAverage(ages1));
 		
-		double[] ddages = new double[9];
-		ddages[0] = 3;
-		ddages[1] = 9;
-		ddages[2] = 23;
-		ddages[3] = 64;
-		ddages[4] = 2;
-		ddages[5] = 8;
-		ddages[6] = 28;
-		ddages[7] = 93;
-		ddages[8] = 30;
-		System.out.println(isFirstArrayGreater(dages, ddages));
+		//Prompt 11
+		double[] ages2 = {30, 9, 23, 64, 2, 8, 28, 93}; //Larger array
+		System.out.println("Prompt 11: " + isFirstArrayGreater(ages1, ages2));
+		System.out.println("Prompt 11: " + isFirstArrayGreater(ages2, ages1));
+		
+		//Prompt 12
+		boolean isHotOutside = true;
+		double moneyInPocket = 11.50;
+		System.out.println("Prompt 12: " + willBuyDrink(isHotOutside, moneyInPocket));
+		
+		//Prompt 13
+		double bill = 100.0;
+		int tipPercentage = 20;
+		System.out.println("Prompt 13: Your total amount is: " + billPlusTip(bill, tipPercentage));
 		
 	}
 	
@@ -146,6 +144,7 @@ public class ArrayandMethod {
 	//Prompt 11:
 	public static boolean isFirstArrayGreater (double[] a, double[] b)
 	{
+		//Using findAverage method in Prompt 10 to find the averages of the two arrays:
 		double averageA = findAverage(a);
 		double averageB = findAverage(b);
 		if (averageA > averageB) 
@@ -171,13 +170,11 @@ public class ArrayandMethod {
 	/*
 	 * Prompt 13:
 	 * This method takes the bill amount and the tip percentage as arguments.
-	 * It calculates the tip and returns total amount to pay (Bill + Tip
+	 * It calculates the tip and returns total amount to pay (Bill + Tip)
 	 */
 	public static double billPlusTip(double bill, int tipPercentage)
 	{
-		double tipAmount = bill * (tipPercentage / 100);
-		System.out.println("Your tip amount is: " + tipAmount + 
-				" which makes your total bill: " + bill + tipAmount);
+		double tipAmount = bill * (tipPercentage / 100.0);
 		return bill + tipAmount;
 	}
 
