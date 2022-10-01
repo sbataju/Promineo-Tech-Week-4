@@ -1,4 +1,4 @@
-package week3;
+package week3_4;
 
 public class ArrayandMethod {
 
